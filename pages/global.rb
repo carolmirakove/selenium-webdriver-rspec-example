@@ -13,6 +13,7 @@ class Global < Page
   YOUTUBE_LINK_LOCATOR = { link: 'youtube' }
   SOUNDCLOUD_LINK_LOCATOR = { link: 'cloud' }
   # footer
+  # TODO
 
   def ui_elements
     yield HEADER_LOCATOR
@@ -21,6 +22,8 @@ class Global < Page
     # add footer
   end
 
+  # header
+  
   def click_facebook_from_header
     click_within HEADER_LOCATOR, FACEBOOK_LINK_LOCATOR
   end

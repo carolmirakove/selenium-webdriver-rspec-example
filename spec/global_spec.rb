@@ -41,8 +41,8 @@ describe 'Global' do
     expect(@page.title).to eq('Poets.org - YouTube')
   end
 
-  # it 'click SoundCloud from header', :regression do
-  it 'click SoundCloud from header', :debug do
+  # SoundCloud seems to rotate three different page titles, so we will match for an include rather than equal string
+  it 'click SoundCloud from header', :regression do
     @page.load ''
     @global.click_soundcloud_from_header
     expect(@page.title).to include('Academy of American Poets\'s')

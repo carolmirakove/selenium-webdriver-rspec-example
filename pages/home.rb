@@ -11,8 +11,7 @@ class Home < Page
   JOIN_LINK_LOCATOR = { link: 'Join the Academy' }
   HEADER_BOTTOM_LOCATOR = { css: 'div#header-bottom-l' }
   # side nav
-
-
+  # TODO
   # programs
   AAP_HOME_LINK_LOCATOR = { link: 'Academy of American Poets' }
   NPM_LINK_LOCATOR = { link: 'National Poetry Month' }
@@ -31,8 +30,7 @@ class Home < Page
   PAD_ABOUT_LOCATOR = { css: 'div#options-wrapper' }
   PAD_POEM_LINK_LOCATOR = { link: 'poem' }
   # footer
-
-
+  # TODO
 
   def click_logo
     click LOGO_LOCATOR
@@ -45,6 +43,8 @@ class Home < Page
     yield PAD_CONTENT_LOCATOR
   end
 
+  # header
+  
   def click_prizes
     click_within TOP_NAV_LINKS_LOCATOR, PRIZES_LINK_LOCATOR
   end
@@ -57,25 +57,7 @@ class Home < Page
     click_within TOP_NAV_LINKS_LOCATOR, JOIN_LINK_LOCATOR
   end
 
-  def click_facebook_from_header
-    click_within SOCIAL_LINKS_HEADER_LOCATOR, FACEBOOK_LINK_LOCATOR
-  end
-
-  def click_twitter_from_header
-    click_within SOCIAL_LINKS_HEADER_LOCATOR, TWITTER_LINK_LOCATOR
-  end
-
-  def click_tumblr_from_header
-    click_within SOCIAL_LINKS_HEADER_LOCATOR, TUMBLR_LINK_LOCATOR
-  end
-
-  def click_youtube_from_header
-    click_within SOCIAL_LINKS_HEADER_LOCATOR, YOUTUBE_LINK_LOCATOR
-  end
-
-  def click_soundcloud_from_header
-    click_within SOCIAL_LINKS_HEADER_LOCATOR, SOUNDCLOUD_LINK_LOCATOR
-  end
+  # header bottom
 
   def click_aap_home_from_header_bottom
     click_within HEADER_BOTTOM_LOCATOR, AAP_HOME_LINK_LOCATOR
@@ -88,6 +70,8 @@ class Home < Page
   def click_magazine_from_header_bottom
     click_within HEADER_BOTTOM_LOCATOR, MAGAZINE_LINK_LOCATOR
   end
+
+  # poem-a-day
 
   def poem_a_day_displayed?
     is_displayed? PAD_CONTENT_LOCATOR
