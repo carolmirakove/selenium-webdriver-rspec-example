@@ -1,4 +1,10 @@
+# Mac system files
 .DS_Store
+
+# xmind test plan files, test-run artifacts
 *.log
-browser-drivers/
-test-plans/
+errors/
+test-plans/*.xmind
+
+# account credentials
+lib/login_credentials.rb
