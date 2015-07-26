@@ -12,36 +12,25 @@ class Global < Page
   TUMBLR_LINK_LOCATOR = { link: 'tumbler' }
   YOUTUBE_LINK_LOCATOR = { link: 'youtube' }
   SOUNDCLOUD_LINK_LOCATOR = { link: 'cloud' }
-  # footer
-  # TODO
 
   def ui_elements
     yield HEADER_LOCATOR
     yield LOGO_LOCATOR
     yield SEARCH_INPUT_LOCATOR
-    # add footer
   end
-
-  # header
   
-  def click_facebook_from_header
-    click_within HEADER_LOCATOR, FACEBOOK_LINK_LOCATOR
+  def click_social_icon_from_header(channel)
+    case channel
+    when 'facebook'
+      click_within HEADER_LOCATOR, FACEBOOK_LINK_LOCATOR
+    when 'twitter'
+      click_within HEADER_LOCATOR, TWITTER_LINK_LOCATOR
+    when 'tumblr'
+      click_within HEADER_LOCATOR, TUMBLR_LINK_LOCATOR
+    when 'youtube'
+      click_within HEADER_LOCATOR, YOUTUBE_LINK_LOCATOR
+    when 'soundcloud'
+      click_within HEADER_LOCATOR, SOUNDCLOUD_LINK_LOCATOR
+    end
   end
-
-  def click_twitter_from_header
-    click_within HEADER_LOCATOR, TWITTER_LINK_LOCATOR
-  end
-
-  def click_tumblr_from_header
-    click_within HEADER_LOCATOR, TUMBLR_LINK_LOCATOR
-  end
-
-  def click_youtube_from_header
-    click_within HEADER_LOCATOR, YOUTUBE_LINK_LOCATOR
-  end
-
-  def click_soundcloud_from_header
-    click_within HEADER_LOCATOR, SOUNDCLOUD_LINK_LOCATOR
-  end
-
 end # Global
