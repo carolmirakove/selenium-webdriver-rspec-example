@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 group :test_frameworks do
   gem 'selenium-webdriver'
-  gem 'rspec', '~> 3.0.0'
-  gem 'rspec-expectations', '3.0.4'
+  gem 'rspec', '~> 3.3'
+  gem 'rspec-expectations', '3.3'
   gem 'rspec-retry'
 end
 
