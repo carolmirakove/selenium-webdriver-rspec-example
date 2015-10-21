@@ -5,7 +5,7 @@ class Global < Page
   # header
   HEADER_LOCATOR = { id: 'header' }
   LOGO_LOCATOR = { id: 'logo' }
-  SEARCH_INPUT_LOCATOR = { id: 'edit-search-block-form--2' }
+  SEARCH_INPUT_LOCATOR = { name: 'search_block_form' }
   # social
   FACEBOOK_LINK_LOCATOR = { link: 'facebook' }
   TWITTER_LINK_LOCATOR = { link: 'twitter' }
@@ -19,6 +19,11 @@ class Global < Page
     yield SEARCH_INPUT_LOCATOR
   end
   
+  def submit_search_term(keyword)
+    clear_then_enter keyword, SEARCH_INPUT_LOCATOR
+    enter :enter, SEARCH_INPUT_LOCATOR
+  end
+
   def click_social_icon_from_header(channel)
     case channel
     when 'facebook'

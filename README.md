@@ -124,16 +124,18 @@ For example, a spec expecting no search results usually looks like this:
       page.load ''
       global.submit_search_term(keyword)
       # ...
+      expect(search.no_results_displayed?).to be_truthy
     end
 
 If we wanted to iterate through Ruby injection scripts into the search input field from the text file we'd edit the example like this:
 
     File.foreach(Dir.pwd + '/test-data/blns_ruby-injection.txt') do |keyword|
-    it 'submit a search term that should return no results' do
+    it 'submit a search term that returns no results' do
 
       page.load ''
         global.submit_search_term(keyword)
         # ...
+        expect(search.no_results_displayed?).to be_truthy
       end
     end
 
