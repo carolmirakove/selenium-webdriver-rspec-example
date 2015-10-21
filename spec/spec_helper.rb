@@ -46,7 +46,7 @@ RSpec.configure do |config|
   end
 
   config.verbose_retry = true # show retry status in spec process
-  config.default_retry_count = 3
+  config.default_retry_count = 2
 
   config.after(:each) do |example|
     if ENV['host'] == 'saucelabs'

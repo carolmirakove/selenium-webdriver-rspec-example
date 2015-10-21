@@ -19,6 +19,7 @@ class Home < Page
   PAD_MORE_LINK_LOCATOR = { link: 'more' }
   PAD_ABOUT_LOCATOR = { css: 'div#options-wrapper' }
   PAD_POEM_LINK_LOCATOR = { link: 'poem' }
+  PAD_SIGN_UP_LOCATOR = { css: 'div.subscribe a.ctools-use-modal' }
 
   def click_logo
     click LOGO_LOCATOR
@@ -61,5 +62,9 @@ class Home < Page
 
   def click_poem_a_day_back_to_poem
     click_within PAD_ABOUT_LOCATOR, PAD_POEM_LINK_LOCATOR
+  end
+
+  def click_poem_a_day_sign_up
+    click PAD_SIGN_UP_LOCATOR
   end
 end # Home

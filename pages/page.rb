@@ -44,8 +44,25 @@ class Page
     find_within(context, locator).click
   end
 
+  def clear(locator) 
+    find(locator).clear
+  end
+
+  def clear_within(context, locator) 
+    find_within(context, locator).clear
+  end
+  
+  def clear_then_enter(text, locator)
+    find(locator).clear
+    find(locator).send_keys text
+  end
+
   def enter(text, locator)
     find(locator).send_keys text
+  end
+
+  def enter_within(text, context, locator) 
+    find_within(context, locator).send_keys text
   end
 
   def hover_over(locator)
