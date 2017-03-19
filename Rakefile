@@ -22,6 +22,15 @@ namespace :desktop do
     run_in_parallel('4', '~skip')
   end
 
+  # rake desktop:by_tag[production,chrome,debug]
+  desc 'Run tests by tag, base_url and browser'
+  task :by_tag, :base_url, :browser, :tag do |t, args|
+    ENV['base_url'] = args[:base_url]
+    ENV['browser'] = args[:browser]
+    tag = args[:tag]
+    run_in_parallel('1', "#{tag}")
+  end
+
   # example:
   # rake desktop:focus[local,firefox]
   desc 'Run tests tagged focus by base_url and browser'
@@ -33,7 +42,7 @@ namespace :desktop do
 end
 
 namespace :cloud do
-  
+
   # see https://docs.saucelabs.com/reference/platforms-configurator/#/ for OS and browsers
 
   # examples:
